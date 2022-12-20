@@ -22,13 +22,7 @@ export default function Home() {
       <main className={styles.main}>
           <Navbar></Navbar>
         <div className={styles.card}>
-            <Link href="/cv"><p>Check out CV</p></Link>
-        </div>
-        <div className={styles.card}>
-            <Link href="/skills"><p>Check out Skills</p></Link>
-        </div>
-        <div className={styles.card}>
-          <Link href="/projects"><p>Check out Projekte</p></Link>
+           <p>Hallo! :-)</p>
         </div>
       </main>
     </>
