@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "populate:contentful": "contentful space migration --space-id 'a8gsr2u48pzh' utils/populate-contentful.js --yes"
   },
   "dependencies": {
     "@next/font": "13.0.7",
@@ -21,5 +22,9 @@
     "react-router-dom": "^6.5.0",
     "sass": "^1.57.0",
     "typescript": "4.9.4"
+  },
+  "devDependencies": {
+    "contentful-cli": "^1.16.21",
+    "contentful-migration": "^4.12.5"
   }
 }
