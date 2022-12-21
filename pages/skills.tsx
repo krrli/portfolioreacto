@@ -1,9 +1,12 @@
 import Link from "next/link";
 import Head from "next/head";
-import {inspect} from "util";
 import styles from "./skills.module.scss"
+import { fetchEntries } from '../util/contentfulPosts'
+import Post from '../components/Post/Post'
 
-export default function Skills() {
+
+// @ts-ignore
+export default function Skills({posts}) {
     return(
         <>
             <Head>
@@ -18,6 +21,28 @@ export default function Skills() {
                 <Link href="/">Back to home</Link>
             </h2>
             </div>
+            <br/>
+            <br/>
+            <div className={styles.post}>
+                {posts.map((p: any) => {
+                    //console.log(p);
+                    return <Post key={p.date} date={p.date} image={p.fields} title={p.title} />
+                })}
+            </div>
         </>
     );
+}
+
+export async function getStaticProps() {
+    const res = await fetchEntries()
+    const posts = await res!.map((p) => {
+        console.log(p)
+        return p.fields
+    })
+
+    return {
+        props: {
+            posts,
+        },
+    }
 }

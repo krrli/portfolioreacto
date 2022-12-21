@@ -1,5 +1,14 @@
 import Link from "next/link";
 import Head from "next/head";
+import styles from "./projects.module.scss";
+import React, {FunctionComponent, Fragment, ReactNode} from 'react';
+import Jobs from "../components/Jobs/Jobs";
+
+
+type Props = {
+    children: ReactNode;
+}
+
 
 export default function Projects() {
     return(
@@ -14,6 +23,9 @@ export default function Projects() {
             <h2>
                 <Link href="/">Back to home</Link>
             </h2>
+            <div className={styles.container}>
+
+            </div>
         </>
     );
 }

@@ -1,7 +1,12 @@
 import Link from "next/link";
 import styles from './cv.module.scss';
+import jobs from "../components/Jobs/Jobs";
+import Jobs from "../components/Jobs/Jobs";
+import {Job} from "../interfaces/job";
 
 export default function CV() {
+
+
     return(
         <>
             <div>
@@ -13,7 +18,10 @@ export default function CV() {
                 <h2>
                     <Link href="/">Back to home</Link>
                 </h2>
+
             </div>
         </>
     );
 }
+
+
