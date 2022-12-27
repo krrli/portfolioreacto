@@ -1,4 +1,25 @@
+.navContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 100%;
+  align-items: baseline;
+
+}
 
 .nav {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  column-gap: 25px;
+  justify-self: end;
+}
 
+.title {
+
+}
+
+.navitem {
+  //color: lavender;
+  width: auto;
+  font-size: 25px;
 }

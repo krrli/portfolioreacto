@@ -3,6 +3,7 @@ import Head from "next/head";
 import styles from "./projects.module.scss";
 import React, {FunctionComponent, Fragment, ReactNode} from 'react';
 import Jobs from "../components/Jobs/Jobs";
+import Navbar from "../components/Navbar/NavBar";
 
 
 type Props = {
@@ -19,6 +20,7 @@ export default function Projects() {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+            <Navbar></Navbar>
             <h1>Projekte</h1>
             <h2>
                 <Link href="/">Back to home</Link>

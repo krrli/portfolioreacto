@@ -21,9 +21,6 @@ export default function Home() {
 
       <main className={styles.main}>
           <Navbar></Navbar>
-        <div className={styles.card}>
-           <p>Hallo! :-)</p>
-        </div>
       </main>
     </>
   )
