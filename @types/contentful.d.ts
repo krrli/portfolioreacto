@@ -3,6 +3,36 @@
 import { Asset, Entry } from "contentful";
 import { Document } from "@contentful/rich-text-types";
 
+export interface IHelloFields {
+  /** Portfolio Image */
+  portfolioImage?: Asset | undefined;
+
+  /** Introduction */
+  introduction?: Document | undefined;
+
+  /** Subtitle */
+  subtitle?: string | undefined;
+}
+
+/** First Info on Portfolio Site */
+
+export interface IHello extends Entry<IHelloFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "hello";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
 export interface IJobFields {
   /** title */
   title: string;
@@ -17,7 +47,7 @@ export interface IJobFields {
   dateFrom: string;
 
   /** dateTo */
-  dateTo: string;
+  dateTo?: string | undefined;
 
   /** description */
   description: Document;
@@ -33,6 +63,31 @@ export interface IJob extends Entry<IJobFields> {
     contentType: {
       sys: {
         id: "job";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
+export interface ILinksFields {
+  /** URL */
+  url: string;
+
+  /** Text */
+  text?: string | undefined;
+}
+
+export interface ILinks extends Entry<ILinksFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "links";
         linkType: "ContentType";
         type: "Link";
       };
@@ -68,9 +123,116 @@ export interface IPost extends Entry<IPostFields> {
   };
 }
 
-export type CONTENT_TYPE = "job" | "post";
+export interface IProjectFields {
+  /** Logo */
+  logo?: Asset | undefined;
 
-export type IEntry = IJob | IPost;
+  /** Description */
+  description?: Document | undefined;
+
+  /** Title */
+  title?: string | undefined;
+
+  /** Company */
+  company?: string | undefined;
+
+  /** Start Date (Month/Year) */
+  yearFrom?: string | undefined;
+
+  /** End Date (Month/Year) */
+  yearEnd?: string | undefined;
+
+  /** Description Short */
+  descriptionShort?: string | undefined;
+
+  /** Project Links */
+  projectLinks?: Entry<{ [fieldId: string]: unknown }>[] | undefined;
+}
+
+export interface IProject extends Entry<IProjectFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "project";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
+export interface ISkillCategoryFields {
+  /** Category Name */
+  categoryName?: string | undefined;
+}
+
+export interface ISkillCategory extends Entry<ISkillCategoryFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "skillCategory";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
+export interface ISkillsFields {
+  /** Skill Name */
+  skillName?: string | undefined;
+
+  /** Skill Percentage */
+  skillPercentage: number;
+
+  /** Skill Category */
+  skillCategory?: Entry<{ [fieldId: string]: unknown }> | undefined;
+}
+
+export interface ISkills extends Entry<ISkillsFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "skills";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
+export type CONTENT_TYPE =
+  | "hello"
+  | "job"
+  | "links"
+  | "post"
+  | "project"
+  | "skillCategory"
+  | "skills";
+
+export type IEntry =
+  | IHello
+  | IJob
+  | ILinks
+  | IPost
+  | IProject
+  | ISkillCategory
+  | ISkills;
 
 export type LOCALE_CODE = "de-CH" | "en-US";
 

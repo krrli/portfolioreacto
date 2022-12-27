@@ -3,10 +3,11 @@
 .navContainer {
   width: 100%;
   height: 10vh;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 100%;
-  //align-items: center;
+  align-items: center;
 
   @media only screen and (min-width: $screen-medium) {
     grid-template-columns: 1fr 3fr;
@@ -27,10 +28,23 @@
 
 }
 
+.menuButton{
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+
+  @media only screen and (min-width: $screen-medium) {
+    display: none;
+  }
+}
+
 .navBurger {
   width: 30px;
   height: 30px;
-
 
   @media only screen and (min-width: $screen-medium) {
     display: none;
@@ -42,7 +56,22 @@
 
   @media only screen and (min-width: $screen-medium) {
     display: block;
-    font-size: 25px;
+    font-size: 20px;
   }
+
+}
+
+
+
+
+.popupMenu {
+ // https://ibaslogic.com/how-to-add-hamburger-menu-in-react/
+}
+
+.popupMenu show{
+
+}
+
+.popupMenu hidden{
 
 }
