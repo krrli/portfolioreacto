@@ -4,9 +4,9 @@
   width: 100%;
   height: 10vh;
   display: grid;
-  grid-template-columns: 2fr 2fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 100%;
-  align-items: baseline;
+  //align-items: center;
 
   @media only screen and (min-width: $screen-medium) {
     grid-template-columns: 1fr 3fr;
@@ -14,14 +14,12 @@
 }
 
 .nav {
-
-
+  justify-self: end;
 
   @media only screen and (min-width: $screen-medium) {
     display: grid;
     grid-template-columns: repeat(3, auto);
     column-gap: 25px;
-    justify-self: end;
   }
 }
 
@@ -29,9 +27,18 @@
 
 }
 
+.navBurger {
+  width: 30px;
+  height: 30px;
+
+
+  @media only screen and (min-width: $screen-medium) {
+    display: none;
+  }
+}
+
 .navItem {
-  //display: none;
-  font-size: 10px;
+  display: none;
 
   @media only screen and (min-width: $screen-medium) {
     display: block;
