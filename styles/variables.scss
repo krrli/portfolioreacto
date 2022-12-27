@@ -1,31 +1,33 @@
-:root {
-  --font-size-baseline: 16px;
+$screen-medium: 810px;
+$screen-big: 950px;
 
-  --color-dark-grey: #444444;
-  --color-grey: #c3c3c3;
-  --color-light-grey: #eaeff2;
-  --color-white: #ffffff;
-  --color-black: #000000;
+$font-size-baseline: 16px;
 
-  --color-black-rgb: rgb(0, 0, 0);
+$color-dark-grey: #444444;
+$color-grey: #c3c3c3;
+$color-light-grey: #eaeff2;
+$color-white: #ffffff;
+$color-black: #000000;
 
-  --space-10: 1rem;
-  --space-15: 1.5rem;
-  --space-20: 2rem;
-  --space-25: 2.5rem;
-  --space-30: 3rem;
-  --space-40: 4rem;
-  --space-50: 5rem;
-  --space-60: 6rem;
-  --space-80: 8rem;
-  --space-120: 12rem;
-  --space-180: 18rem;
+$color-black-rgb: rgb(0, 0, 0);
 
-  --space-h: 2rem;
-  --space-h-large: max(3.575vw, 50vw - 810px / 2);
-  --space-h-xlarge: max(8.35vw, 50vw - 1600px / 2);
+$space-10: 1rem;
+$space-15: 1.5rem;
+$space-20: 2rem;
+$space-25: 2.5rem;
+$space-30: 3rem;
+$space-40: 4rem;
+$space-50: 5rem;
+$space-60: 6rem;
+$space-80: 8rem;
+$space-120: 12rem;
+$space-180: 18rem;
 
-  --grid-gap: 1rem;
-  --grid-gap-large: 3rem;
-  --grid-gap-xlarge: 6rem;
-}
+$space-h: 2rem;
+$space-h-large: max(3.575vw, 50vw - 810px / 2);
+$space-h-xlarge: max(8.35vw, 50vw - 1600px / 2);
+
+$grid-gap: 1rem;
+$grid-gap-large: 3rem;
+$grid-gap-xlarge: 6rem;
+

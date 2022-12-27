@@ -1,25 +1,41 @@
+@import "styles/variables.scss";
+
 .navContainer {
   width: 100%;
+  height: 10vh;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 2fr 2fr;
   grid-template-rows: 100%;
   align-items: baseline;
 
+  @media only screen and (min-width: $screen-medium) {
+    grid-template-columns: 1fr 3fr;
+  }
 }
 
 .nav {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  column-gap: 25px;
-  justify-self: end;
+
+
+
+  @media only screen and (min-width: $screen-medium) {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    column-gap: 25px;
+    justify-self: end;
+  }
 }
 
 .title {
 
 }
 
-.navitem {
-  //color: lavender;
-  width: auto;
-  font-size: 25px;
+.navItem {
+  //display: none;
+  font-size: 10px;
+
+  @media only screen and (min-width: $screen-medium) {
+    display: block;
+    font-size: 25px;
+  }
+
 }
