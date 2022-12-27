@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "generate:types": "contentful-typescript-codegen --output @types/contentful.d.ts",
     "populate:contentful": "contentful space migration --space-id 'a8gsr2u48pzh' util/populate-contentful.js --yes"
   },
   "dependencies": {
@@ -14,7 +15,6 @@
     "@types/node": "18.11.17",
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.9",
-    "contentful": "^9.2.14",
     "dotenv-webpack": "^8.0.1",
     "eslint": "8.22.0",
     "eslint-config-next": "13.0.7",
@@ -26,7 +26,12 @@
     "typescript": "4.9.4"
   },
   "devDependencies": {
+    "@contentful/rich-text-react-renderer": "^15.16.2",
+    "contentful": "^9.2.14",
     "contentful-cli": "^1.16.21",
-    "contentful-migration": "^4.12.5"
+    "contentful-management": "^10.26.0",
+    "contentful-migration": "^4.12.5",
+    "contentful-typescript-codegen": "^3.4.0",
+    "dotenv": "^16.0.3"
   }
 }

@@ -35,8 +35,7 @@ export default function Skills({posts}) {
 
 export async function getStaticProps() {
     const res = await fetchEntries()
-    const posts = await res!.map((p) => {
-        console.log(p)
+    const posts = res!.map((p) => {
         return p.fields
     })
 
