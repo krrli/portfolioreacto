@@ -4,6 +4,7 @@ import styles from "./skills.module.scss"
 import { fetchEntries } from '../util/contentfulPosts'
 import Post from '../components/Post/Post'
 import Navbar from "../components/Navbar/NavBar";
+import Footer from "../components/Footer/Footer";
 
 
 // @ts-ignore
@@ -32,6 +33,7 @@ export default function Skills({posts}) {
 
                 })}
             </div>
+            <Footer />
         </>
     );
 }

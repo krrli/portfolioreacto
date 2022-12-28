@@ -9,6 +9,7 @@ import Hello from "../components/Hello/Hello";
 import {GetStaticProps, NextPage} from "next";
 import ContentService from "../util/content-service";
 import {IHelloFields, IJobFields} from "../@types/contentful";
+import Footer from "../components/Footer/Footer";
 
 
 interface Props {
@@ -50,7 +51,7 @@ const Home: NextPage<Props> = ({ globalInfos }) => (
             <Navbar></Navbar>
             <Hello generalInfo={globalInfos}></Hello>
         </main>
-
+        <Footer></Footer>
     </div>
 );
 

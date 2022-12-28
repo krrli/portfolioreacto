@@ -4,6 +4,7 @@ import styles from "./projects.module.scss";
 import React, {FunctionComponent, Fragment, ReactNode} from 'react';
 import Jobs from "../components/Jobs/Jobs";
 import Navbar from "../components/Navbar/NavBar";
+import Footer from "../components/Footer/Footer";
 
 
 type Props = {
@@ -28,6 +29,7 @@ export default function Projects() {
             <div className={styles.container}>
 
             </div>
+            <Footer/>
         </>
     );
 }

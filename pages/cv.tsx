@@ -5,6 +5,7 @@ import ContentService from "../util/content-service";
 import {GetStaticProps, NextPage} from "next";
 import {documentToReactComponents} from "@contentful/rich-text-react-renderer";
 import Navbar from "../components/Navbar/NavBar";
+import Footer from "../components/Footer/Footer";
 
 // The props for our page component
 interface Props {
@@ -44,6 +45,7 @@ const CV: NextPage<Props> = ({jobs}) => {
                         ))}
                     </div>
                 </div>
+                <Footer/>
             </div>
         </>
     );
