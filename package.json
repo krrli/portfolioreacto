@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "generate:types": "contentful-typescript-codegen --output @types/contentful.d.ts",
-    "populate:contentful": "contentful space migration --space-id 'a8gsr2u48pzh' util/populate-contentful.js --yes"
+    "build:prod": "npm run generate:types && next build && next export"
   },
   "dependencies": {
     "@next/font": "13.0.7",
