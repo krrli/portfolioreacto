@@ -5,7 +5,7 @@ import { Document } from "@contentful/rich-text-types";
 
 export interface IHelloFields {
   /** Portfolio Image */
-  portfolioImage?: Asset | undefined;
+  portfolioImage: Asset;
 
   /** Introduction */
   introduction: Document;
