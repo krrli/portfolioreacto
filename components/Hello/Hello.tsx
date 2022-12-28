@@ -42,7 +42,6 @@ const Hello: FC<Props> = (props) => {
                     <div className={styles.portraitContainer}>
                         {/* */}
                         <Image
-                            className={styles.portrait}
                             src={'https:'+ info.portfolioImage.fields.file.url}
                                width={info.portfolioImage.fields.file.details.image?.width}
                                 height={info.portfolioImage.fields.file.details.image?.height}
@@ -51,7 +50,7 @@ const Hello: FC<Props> = (props) => {
                     </div>
                     <div className={styles.textContainer}>
                         {documentToReactComponents(info.introduction)}
-                        <h4 className={styles.subtitle}>{info.subtitle}</h4>
+                        <p className={styles.subtitle}>{info.subtitle}</p>
                     </div>
                 </div>
 
