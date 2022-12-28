@@ -99,6 +99,8 @@ body {
 }
 
 body {
+  display: grid;
+  justify-items: center;
   //color: rbg(--foreground-rgb);
   /*
   background: linear-gradient(
