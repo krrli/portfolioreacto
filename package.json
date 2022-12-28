@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "generate:types": "contentful-typescript-codegen --output @types/contentful.d.ts",
-    "build:prod": "npm run generate:types && next build && next export"
+    "build:prod": "npm run generate:types && next build"
   },
   "dependencies": {
     "@next/font": "13.0.7",
