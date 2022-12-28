@@ -6,9 +6,16 @@ import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.scss'
 import './'
 import Hello from "../components/Hello/Hello";
+import {GetStaticProps, NextPage} from "next";
+import ContentService from "../util/content-service";
+import {IHelloFields, IJobFields} from "../@types/contentful";
 
 
-const inter = Inter({ subsets: ['latin'] })
+interface Props {
+    globals: IHelloFields[];
+}
+
+//const Home: NextPage<Props> = ({ globals }) => (
 
 export default function Home() {
   return (
@@ -27,3 +34,6 @@ export default function Home() {
     </>
   )
 }
+
+
+

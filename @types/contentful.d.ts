@@ -8,7 +8,7 @@ export interface IHelloFields {
   portfolioImage?: Asset | undefined;
 
   /** Introduction */
-  introduction?: Document | undefined;
+  introduction: Document;
 
   /** Subtitle */
   subtitle?: string | undefined;
