@@ -37,8 +37,8 @@ export interface IJobFields {
   /** title */
   title: string;
 
-  /** percentage */
-  percentage: number;
+  /** percentageText */
+  percentageText?: string | undefined;
 
   /** company */
   company: string;

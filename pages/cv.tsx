@@ -20,7 +20,7 @@ const CV: NextPage<Props> = ({jobs}) => {
             <div>
                 <Navbar></Navbar>
                 <div className={styles.container}>
-                    <h1>CV</h1>
+                    <div className={styles.introduction}>
                     <p>Seit 2011 befasse ich mich damit, wie ich Benutzerinnen und Benutzern, Kundinnen und Kunden mit
                         meiner Arbeit als Softwareentwicklerin das Leben vereinfache. Durch mein analytisches Denken und
                         meine Neugierde kann ich mich jeweils rasch in neue Projekte und Technologien einarbeiten. Mein
@@ -28,17 +28,14 @@ const CV: NextPage<Props> = ({jobs}) => {
                         Tätigkeiten bei drei Softwareunternehmen ermöglichten mir, vielfältige Erfahrungen zu sammeln. Durch
                         das Informatik-Studium an der Hochschule Luzern konnte ich bereits bestehendes Wissen vertiefen und
                         in den Bereichen Software Engineering und Architektur viel dazulernen.</p>
-                    <h2>
-                        <Link href="/">Back to home</Link>
-                    </h2>
+                    </div>
 
-
-
-                    <div className={styles.grid}>
+                    <div className={styles.timelineContainer}>
                         {jobs.map((job) => (
 
-                            <div className={styles.card}>
-                                <h2>{job.title}</h2>
+                            <div key={job.title} >
+                                <p><strong>{job.title}</strong>, {job.percentageText}</p>
+                                <p>{job.company} | {job.dateFrom} - {job.dateTo}</p>
                                 {documentToReactComponents(job.description)}
                             </div>
 
