@@ -35,9 +35,9 @@ const Hello: FC<Props> = (props) => {
     return (
         <div className={styles.container}>
             {generalInfo.map((info: IHelloFields) => (
-                <div key={info.subtitle}>
+                <div key={info.subtitle} className={styles.textContainer}>
                     {documentToReactComponents(info.introduction)}
-                    <h2>{info.subtitle}</h2>
+                    <h4 className={styles.subtitle}>{info.subtitle}</h4>
                 </div>
 
             ))}
