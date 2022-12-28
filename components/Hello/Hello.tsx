@@ -1,4 +1,5 @@
 import React, {FC} from 'react';
+import Image from 'next/image';
 import {IHelloFields} from "../../@types/contentful";
 import styles from "./Hello.module.scss"
 import {documentToReactComponents} from "@contentful/rich-text-react-renderer";
@@ -26,6 +27,8 @@ const Hello: FC<Props> = (props) => {
         generalInfo
     } = props;
 
+    console.log(generalInfo)
+
 //export default function Hello ({props}){
 
     {
@@ -33,11 +36,23 @@ const Hello: FC<Props> = (props) => {
     }
 
     return (
-        <div className={styles.container}>
+        <div >
             {generalInfo.map((info: IHelloFields) => (
-                <div key={info.subtitle} className={styles.textContainer}>
-                    {documentToReactComponents(info.introduction)}
-                    <h4 className={styles.subtitle}>{info.subtitle}</h4>
+                <div key={info.subtitle} className={styles.container}>
+                    <div className={styles.portraitContainer}>
+                        {/* */}
+                        <Image
+                            className={styles.portrait}
+                            src={'https:'+ info.portfolioImage.fields.file.url}
+                               width={info.portfolioImage.fields.file.details.image?.width}
+                                height={info.portfolioImage.fields.file.details.image?.height}
+                         alt={info.portfolioImage.fields.title}></Image>
+
+                    </div>
+                    <div className={styles.textContainer}>
+                        {documentToReactComponents(info.introduction)}
+                        <h4 className={styles.subtitle}>{info.subtitle}</h4>
+                    </div>
                 </div>
 
             ))}

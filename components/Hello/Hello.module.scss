@@ -1,4 +1,31 @@
 .container {
+  display: grid;
+  justify-items: center;
+  row-gap: 5vh;
+  padding-top: 5vh;
+}
+
+.portraitContainer {
+  width: 30vh;
+  height: 30vh;
+  border-radius: 50%;
+  text-align: center;
+
+
+  img {
+    height: 100%;
+    width: auto;
+    clip-path: circle();
+
+  }
+}
+
+
+
+.portrait{
+  //width: 100%;
+  //height: auto;
+
 
 }
 

@@ -29,6 +29,7 @@ export default function Skills({posts}) {
                 {posts.map((p: any) => {
                     //console.log(p);
                     return <Post key={p.date} date={p.date} image={p.fields} title={p.title} />
+
                 })}
             </div>
         </>
