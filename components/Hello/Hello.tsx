@@ -1,9 +1,8 @@
-import React from 'react';
-import {inspect} from "util";
-import styles from "./Hello.module.scss"
+import React, {FC} from 'react';
 import {IHelloFields} from "../../@types/contentful";
-import {GetStaticProps, NextPage} from "next";
-import ContentService from "../../util/content-service";
+import styles from "./Hello.module.scss"
+import {documentToReactComponents} from "@contentful/rich-text-react-renderer";
+import {Document} from "@contentful/rich-text-types";
 
 
 /*
@@ -21,11 +20,30 @@ interface Props {
     generalInfo: IHelloFields[];
 }
 
-const Hello: NextPage<Props> = ({ generalInfo }) => (
-    <div>
-        <h1>hoi</h1>
+const Hello: FC<Props> = (props) => {
 
-    </div>
-);
+    const {
+        generalInfo
+    } = props;
+
+//export default function Hello ({props}){
+
+    {
+        generalInfo.map((info: IHelloFields) => console.log())
+    }
+
+    return (
+        <div className={styles.container}>
+            {generalInfo.map((info: IHelloFields) => (
+                <div key={info.subtitle}>
+                    {documentToReactComponents(info.introduction)}
+                    <h2>{info.subtitle}</h2>
+                </div>
+
+            ))}
+        </div>
+    )
+}
+
 export default Hello;
 
