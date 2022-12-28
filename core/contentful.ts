@@ -2,8 +2,8 @@ import { createClient } from 'contentful';
 
 export const CONTENT_TYPE_JOB = 'job';
 
-const Space = process.env.CONTENTFUL_SPACE;
-const Token = process.env.CONTENTFUL_TOKEN;
+const Space = process.env.CONTENTFUL_SPACE_ID;
+const Token = process.env.CONTENTFUL_ACCESS_TOKEN;
 
 export class ContentfulService {
 

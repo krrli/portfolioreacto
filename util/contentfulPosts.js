@@ -1,7 +1,8 @@
 import {CONTENT_TYPE_JOB} from "../core/contentful";
+import * as contentType from "next/dist/telemetry/ci-info";
 
-const space = process.env.CONTENTFUL_SPACE
-const accessToken = process.env.CONTENTFUL_TOKEN
+const space = process.env.CONTENTFUL_SPACE_ID
+const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN
 
 const client = require('contentful').createClient({
     space: space,
