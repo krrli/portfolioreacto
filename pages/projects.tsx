@@ -10,6 +10,8 @@ import {ICvIntroFields, IJobFields, IProjectFields} from "../@types/contentful";
 import ContentService from "../util/content-service";
 import {documentToReactComponents} from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
+import Masonry from 'react-masonry-css'
+
 
 
 interface Props {
@@ -18,6 +20,13 @@ interface Props {
 
 const Projects: NextPage<Props> = ({projects}) => {
 //export default function Projects() {
+    const breakpointColumnsObj = {
+        default: 4,
+        1100: 3,
+        700: 2,
+        500: 1
+    };
+
     return(
         <>
             <Head>
@@ -28,6 +37,26 @@ const Projects: NextPage<Props> = ({projects}) => {
             </Head>
             <Navbar></Navbar>
             <div className={styles.container}>
+                <Masonry className={styles.masonryGrid}
+                         breakpointCols={breakpointColumnsObj}
+                         columnClassName={styles.masonryGridColumn}>
+
+                    {projects.map((project) =>
+                        <div key={project.title} className={styles.projectCard}>
+                            {project.logo &&
+                                <Image
+                                    src={'https:'+ project.logo.fields.file.url}
+                                    width={project.logo.fields.file.details.image?.width}
+                                    height={project.logo.fields.file.details.image?.height}
+                                    alt={project.logo.fields.title}></Image>}
+                            <p>{project.title}</p>
+                        </div>
+
+                    )}
+
+                </Masonry>
+                {/*
+
                 {projects.map((project) => (
                     <div className={styles.jobCardContainer}>
                         <div key={project.title} className={styles.projectCard}>
@@ -53,6 +82,7 @@ const Projects: NextPage<Props> = ({projects}) => {
 
 
                 ))}
+                */}
             </div>
             <Footer/>
         </>

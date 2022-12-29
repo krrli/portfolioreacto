@@ -1,8 +1,45 @@
 .container {
-  max-width: 50vh;
+  max-width: 90vh;
+  width: auto;
   display: grid;
 }
 
-.projectCard {
+.masonryGrid{
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
 
+.masonryGridColumn {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}
+.masonryGridColumn > div { /* change div to reference your elements you put in <Masonry> */
+  //background: grey;
+  margin-bottom: 30px;
+
+}
+
+.jobCardContainer {
+
+}
+
+.projectCard:hover {
+  transform: scale(1.01);
+}
+
+.projectCard {
+  display: grid;
+  justify-items: center;
+  padding: 1vh;
+  margin: 1vh;
+  border-radius: 10px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+
+  img {
+    width: 15vh;
+    height: auto;
+  }
 }
