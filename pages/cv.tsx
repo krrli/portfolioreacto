@@ -11,7 +11,6 @@ import Footer from "../components/Footer/Footer";
 interface Props {
     intro: ICvIntroFields[];
     jobs: IJobFields[];
-    //articles: IArticleFields[];
 }
 
 const CV: NextPage<Props> = ({jobs, intro}) => {
@@ -38,7 +37,6 @@ const CV: NextPage<Props> = ({jobs, intro}) => {
                                     <p>{job.company} | {job.dateFrom} - {job.dateTo}</p>
                                     {documentToReactComponents(job.description)}
                                 </div>
-                                {/*<div className={styles.separator}/>*/}
                             </div>
 
 

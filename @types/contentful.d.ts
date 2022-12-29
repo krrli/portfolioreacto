@@ -150,13 +150,13 @@ export interface IProjectFields {
   logo?: Asset | undefined;
 
   /** Description */
-  description?: Document | undefined;
+  description: Document;
 
   /** Title */
-  title?: string | undefined;
+  title: string;
 
   /** Company */
-  company?: string | undefined;
+  company: string;
 
   /** Start Date (Month/Year) */
   yearFrom?: string | undefined;

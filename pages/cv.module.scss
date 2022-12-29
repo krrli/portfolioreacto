@@ -11,7 +11,6 @@
 .timelineContainer {
   max-width: 50vh;
 
-
   div {
     padding-bottom: 1.5vh;
   }
@@ -21,12 +20,6 @@
 
 
 }
-.separator {
-  border-bottom: 2px solid black;
-  width: 80%;
-  justify-self: center;
-
-}
 
 .jobCardContainer {
   display: grid;
@@ -34,10 +27,6 @@
 }
 
 .jobCard {
-  //border-bottom: 2px dotted black;
-  //border: 2px dotted black;
-  //margin-bottom: 2vh;
-  //border-radius: 10px;
   padding: 2vh;
   border-radius: 10px;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
