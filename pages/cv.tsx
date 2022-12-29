@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from './cv.module.scss';
-import {IJobFields} from "../@types/contentful";
+import {ICvIntroFields, IJobFields} from "../@types/contentful";
 import ContentService from "../util/content-service";
 import {GetStaticProps, NextPage} from "next";
 import {documentToReactComponents} from "@contentful/rich-text-react-renderer";
@@ -9,11 +9,12 @@ import Footer from "../components/Footer/Footer";
 
 // The props for our page component
 interface Props {
+    intro: ICvIntroFields[];
     jobs: IJobFields[];
     //articles: IArticleFields[];
 }
 
-const CV: NextPage<Props> = ({jobs}) => {
+const CV: NextPage<Props> = ({jobs, intro}) => {
 
     return (
         <>
@@ -21,24 +22,11 @@ const CV: NextPage<Props> = ({jobs}) => {
                 <Navbar></Navbar>
                 <div className={styles.container}>
                     <div className={styles.introduction}>
-                        <p>Seit 2011 befasse ich mich damit, wie ich
-                            Usern und Kund*innen mit meiner Arbeit als
-                            Softwareentwicklerin das Leben
-                            vereinfache. Durch mein analytisches
-                            Denken und meine Neugierde kann ich mich
-                            jeweils rasch in neue Projekte und
-                            Technologien einarbeiten. Mein offener
-                            Kommunikationsstil erlaubt mir, mich
-                            schnell und erfolgreich in neue Teams
-                            einzubringen.
-                            Die Tätigkeiten bei unterschiedlichen
-                            Softwareunternehmen ermöglichten mir,
-                            vielfältige Erfahrungen zu sammeln. Durch
-                            das Informatik-Studium an der Hochschule
-                            Luzern konnte ich bereits bestehendes
-                            Wissen vertiefen und in den Bereichen
-                            Software Engineering und Architektur viel
-                            dazulernen.</p>
+                        {intro.map((intro) => (
+                            <div>
+                                {documentToReactComponents(intro.introduction)}
+                            </div>
+                        ))}
                     </div>
 
 
@@ -70,10 +58,15 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     const jobs = (
         await ContentService.instance.getEntriesByType<IJobFields>("job")
     ).map((entry: any) => entry.fields);
+    const intro = (
+        await ContentService.instance.getEntriesByType<ICvIntroFields>("cvIntro")
+    ).map((entry: any) => entry.fields);
+
 
     return {
         props: {
             jobs: jobs,
+            intro: intro,
         },
     };
 };

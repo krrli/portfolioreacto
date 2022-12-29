@@ -3,6 +3,28 @@
 import { Asset, Entry } from "contentful";
 import { Document } from "@contentful/rich-text-types";
 
+export interface ICvIntroFields {
+  /** Introduction */
+  introduction: Document;
+}
+
+export interface ICvIntro extends Entry<ICvIntroFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "cvIntro";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
 export interface IHelloFields {
   /** Portfolio Image */
   portfolioImage: Asset;
@@ -217,6 +239,7 @@ export interface ISkills extends Entry<ISkillsFields> {
 }
 
 export type CONTENT_TYPE =
+  | "cvIntro"
   | "hello"
   | "job"
   | "links"
@@ -226,6 +249,7 @@ export type CONTENT_TYPE =
   | "skills";
 
 export type IEntry =
+  | ICvIntro
   | IHello
   | IJob
   | ILinks
