@@ -30,11 +30,12 @@ const CV: NextPage<Props> = ({jobs}) => {
                         in den Bereichen Software Engineering und Architektur viel dazulernen.</p>
                     </div>
 
+
+
                     <div className={styles.timelineContainer}>
                         {jobs.map((job) => (
 
-                            <div key={job.title} >
-                                <p><strong>{job.title}</strong>, {job.percentageText}</p>
+                            <div key={job.title} >                                <p><strong>{job.title}</strong>, {job.percentageText}</p>
                                 <p>{job.company} | {job.dateFrom} - {job.dateTo}</p>
                                 {documentToReactComponents(job.description)}
                             </div>
