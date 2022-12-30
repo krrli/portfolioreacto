@@ -26,6 +26,9 @@ const Projects: NextPage<Props> = ({projects}) => {
         760: 2,
         500: 1
     };
+    const openDetail = (project: IProjectFields) => {
+        console.log('open modal with project ', project.title);
+    };
 
     return(
         <>
@@ -40,23 +43,29 @@ const Projects: NextPage<Props> = ({projects}) => {
                 <Masonry className={styles.masonryGrid}
                          breakpointCols={breakpointColumnsObj}
                          columnClassName={styles.masonryGridColumn}>
-
                     {projects.map((project) =>
+
+
                         <div key={project.title} className={styles.projectCard}>
-                            {project.logo &&
+                            <button className={styles.hiddenButton} onClick={() => openDetail(project)}>
+                                <div className={styles.imageContainer}>
+                                {project.logo &&
                                 <Image
                                     src={'https:'+ project.logo.fields.file.url}
                                     width={project.logo.fields.file.details.image?.width}
                                     height={project.logo.fields.file.details.image?.height}
                                     alt={project.logo.fields.title}></Image>}
-                            <div className={styles.projectTextContainer}>
-                                <div className={styles.projectTitle}>{project.title}</div>
-                                <div className={styles.projectCompany}>{project.company}</div>
-                                { project.description && <div className={styles.projectDescriptionShort}>{project.descriptionShort}</div>}
+                                </div>
+                                <div className={styles.projectTextContainer}>
+                                    <div className={styles.projectTitle}>{project.title}</div>
+                                    <div className={styles.projectCompany}>{project.company}</div>
+                                    { project.description && <div className={styles.projectDescriptionShort}>{project.descriptionShort}</div>}
 
-                            </div>
-
+                                </div>
+                            </button>
                         </div>
+
+
 
                     )}
 

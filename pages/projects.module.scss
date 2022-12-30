@@ -22,6 +22,10 @@
 
 }
 
+.hiddenButton {
+  all:unset;
+}
+
 .jobCardContainer {
 
 }
@@ -31,12 +35,9 @@
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
 }
 
-.projectCard {
+.imageContainer {
   display: grid;
-  padding: 1vh;
-  border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  //box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+  justify-items: center;
 
   img {
     justify-self: center;
@@ -44,6 +45,15 @@
     height: auto;
     padding-bottom: 1vh;
   }
+}
+
+.projectCard {
+  display: grid;
+  padding: 1vh;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  //box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+
 }
 
 .projectTextContainer >div:not(:last-child){
@@ -64,6 +74,7 @@
 
 .projectCompany{
   //justify-self: center;
+  color: #6c757d!important
 }
 
 .projectDescriptionShort{
