@@ -21,9 +21,9 @@ interface Props {
 const Projects: NextPage<Props> = ({projects}) => {
 //export default function Projects() {
     const breakpointColumnsObj = {
-        default: 4,
+        default: 3,
         1100: 3,
-        700: 2,
+        760: 2,
         500: 1
     };
 
@@ -49,7 +49,13 @@ const Projects: NextPage<Props> = ({projects}) => {
                                     width={project.logo.fields.file.details.image?.width}
                                     height={project.logo.fields.file.details.image?.height}
                                     alt={project.logo.fields.title}></Image>}
-                            <p>{project.title}</p>
+                            <div className={styles.projectTextContainer}>
+                                <div className={styles.projectTitle}>{project.title}</div>
+                                <div className={styles.projectCompany}>{project.company}</div>
+                                { project.description && <div className={styles.projectDescriptionShort}>{project.descriptionShort}</div>}
+
+                            </div>
+
                         </div>
 
                     )}

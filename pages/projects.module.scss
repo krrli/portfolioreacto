@@ -27,19 +27,46 @@
 }
 
 .projectCard:hover {
-  transform: scale(1.01);
+  //transform: scale(1.01);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 .projectCard {
   display: grid;
-  justify-items: center;
   padding: 1vh;
-  margin: 1vh;
   border-radius: 10px;
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  //box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
 
   img {
+    justify-self: center;
     width: 15vh;
     height: auto;
+    padding-bottom: 1vh;
   }
+}
+
+.projectTextContainer >div:not(:last-child){
+  //padding-bottom: 1vh;
+}
+.projectTextContainer{
+  margin-left: 0.5vh;
+  margin-right: 0.5vh;
+}
+
+.projectTitle{
+  font-weight: bold;
+  padding-bottom: 0.5vh;
+  //justify-self: center;
+  //text-align: center;
+  //padding-bottom: 1vh;
+}
+
+.projectCompany{
+  //justify-self: center;
+}
+
+.projectDescriptionShort{
+  //padding-top: 1vh;
+  padding-top: 0.5vh;
 }
