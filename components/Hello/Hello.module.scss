@@ -9,6 +9,9 @@
   @media only screen and (min-width: $screen-medium) {
     min-width: 40vh;
   }
+  @media only screen and (min-width: $screen-big) {
+    min-width: 50vh;
+  }
 }
 
 .portraitContainer {
