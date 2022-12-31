@@ -34,7 +34,7 @@ const NavbarSelfmade = () => {
                                 : <FiMenu className={styles.navBurger} />}
                         </button>
                         */}
-                        <Link className={styles.navItem} href="/cv">CV</Link>
+                        <Link className={styles.navItem}  href="/cv">CV</Link>
                         {/*
                         <Link className={styles.navItem} href="/skills">Skills</Link>
                         */}

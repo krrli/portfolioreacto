@@ -1,8 +1,14 @@
+@import "styles/variables.scss";
+
 .container {
   display: grid;
   justify-items: center;
   row-gap: 5vh;
   padding-top: 5vh;
+  min-width: 30vh;
+  @media only screen and (min-width: $screen-medium) {
+    min-width: 40vh;
+  }
 }
 
 .portraitContainer {
