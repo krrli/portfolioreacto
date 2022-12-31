@@ -18,10 +18,10 @@ const CV: NextPage<Props> = ({jobs, intro}) => {
     return (
         <>
                 <Navbar></Navbar>
-                <div key={'cv-container'} className={styles.container}>
-                    <div className={styles.introduction}>
+                <div key={Math.random()} className={styles.container}>
+                    <div key={Math.random()} className={styles.introduction}>
                         {intro.map((intro) => (
-                            <div>
+                            <div key={Math.random()}>
                                 {documentToReactComponents(intro.introduction)}
                             </div>
                         ))}
