@@ -1,0 +1,40 @@
+.container {
+  padding: 4vh 2vh 2vh 2vh;
+  //padding: 2vh;
+  width: 100%;
+}
+
+.imageContainer{
+  display: grid;
+  img {
+    justify-self: center;
+    width: 15vh;
+    height: auto;
+    padding-bottom: 1vh;
+  }
+}
+
+
+
+.textContainer{
+
+}
+
+.projectTitle{
+  font-weight: bold;
+  padding-bottom: 0.5vh;
+  //justify-self: center;
+  //text-align: center;
+  //padding-bottom: 1vh;
+}
+
+.projectCompany{
+  //justify-self: center;
+  padding-bottom: 0.5vh;
+  color: #6c757d!important
+}
+
+.projectDescription{
+  //padding-top: 1vh;
+  padding-top: 0.5vh;
+}

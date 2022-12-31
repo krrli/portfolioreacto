@@ -11,12 +11,9 @@ import ContentService from "../util/content-service";
 import {documentToReactComponents} from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
 import Masonry from 'react-masonry-css'
-import {text} from "stream/consumers";
-import useModal from "../hooks/useModal";
-import Modal from "../components/Modal/Modal";
-
-
-
+import 'react-responsive-modal/styles.css';
+import { Modal } from 'react-responsive-modal';
+import ProjectDetail from "../components/ProjectDetail/ProjectDetail";
 
 
 interface Props {
@@ -26,13 +23,18 @@ interface Props {
 const Projects: NextPage<Props> = ({projects}) => {
 //export default function Projects() {
     const [dialogVisible, setDialogVisible] = useState<boolean>(false);
+    const [open, setOpen] = useState(false);
+
+    const onOpenModal = () => setOpen(true);
+    const onCloseModal = () => setOpen(false);
+    const [modalData, setModalData] = useState(projects[0]);
+
     const breakpointColumnsObj = {
         default: 3,
         1100: 3,
         760: 2,
         500: 1
     };
-    const { isOpen, toggle } = useModal();
 
 
     const handleClick = () => {
@@ -53,6 +55,20 @@ const Projects: NextPage<Props> = ({projects}) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Navbar></Navbar>
+            <div>
+                {/*
+                <button onClick={onOpenModal}>Open modal</button>
+
+                <Modal open={open} onClose={onCloseModal} center>
+                    <h2>Simple centered modal</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                        pulvinar risus non risus hendrerit venenatis. Pellentesque sit amet
+                        hendrerit risus, sed porttitor quam.
+                    </p>
+                </Modal>
+                */}
+            </div>
             <div className={styles.container}>
                 <Masonry className={styles.masonryGrid}
                          breakpointCols={breakpointColumnsObj}
@@ -61,7 +77,10 @@ const Projects: NextPage<Props> = ({projects}) => {
 
 
                         <div key={Math.random()} className={styles.projectCard}>
-                            <button className={styles.hiddenButton} onClick={toggle}>
+                            {/*
+                            <button className={styles.hiddenButton} onClick={(detail) => openDetail}>
+                            */}
+                            <button className={styles.hiddenButton} onClick={() => {onOpenModal(); setModalData(project);}}>
                                 <div className={styles.imageContainer}>
                                 {project.logo &&
                                 <Image
@@ -77,17 +96,13 @@ const Projects: NextPage<Props> = ({projects}) => {
 
                                 </div>
                             </button>
-                            {/*
-                            <button onClick={toggle}>Open Modal </button>
-                            <Modal isOpen={isOpen} toggle={toggle}>
-                            </Modal>
-                            */}
                         </div>
-
-
-
                     )}
                 </Masonry>
+
+                <Modal key={Math.random()} open={open} onClose={onCloseModal} center>
+                    <ProjectDetail project={modalData}></ProjectDetail>
+                </Modal>
 
                 {/*
 
