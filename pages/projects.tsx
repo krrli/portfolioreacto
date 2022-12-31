@@ -60,7 +60,7 @@ const Projects: NextPage<Props> = ({projects}) => {
                     {projects.map((project) =>
 
 
-                        <div key={project.title} className={styles.projectCard}>
+                        <div key={Math.random()} className={styles.projectCard}>
                             <button className={styles.hiddenButton} onClick={toggle}>
                                 <div className={styles.imageContainer}>
                                 {project.logo &&
