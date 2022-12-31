@@ -3,7 +3,7 @@ import Head from "next/head";
 import styles from "./skills.module.scss"
 import { fetchEntries } from '../util/contentfulPosts'
 import Post from '../components/Post/Post'
-import Navbar from "../components/Navbar/NavBar";
+import NavbarSelfmade from "../components/Navbar/NavbarSelfmade";
 import Footer from "../components/Footer/Footer";
 
 
@@ -17,7 +17,7 @@ export default function Skills({posts}) {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Navbar></Navbar>
+            <NavbarSelfmade></NavbarSelfmade>
             <div className={styles.container}>
             <h1>Skills</h1>
             <h2>

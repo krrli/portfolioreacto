@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link';
-import Navbar from '../components/Navbar/NavBar'
+import Navbar from '../components/Navbar/NavbarSelfmade'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.scss'
 import './'

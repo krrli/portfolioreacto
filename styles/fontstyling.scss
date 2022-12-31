@@ -3,6 +3,7 @@
 @mixin h1 {
   font-size: 3.2rem;
   line-height: 1.25;
+  font-weight: bold;
 
   @media (min-width: breakpoints.$jumbo) {
     font-size: 5rem;
@@ -12,6 +13,7 @@
 @mixin h2 {
   font-size: 2rem;
   line-height: 1.5;
+  font-weight: bold;
 
   @media (min-width: breakpoints.$super-jumbo) {
     font-size: 3.4rem;

@@ -1,14 +1,13 @@
+@use "styles/fontstyling";
 @import "styles/variables.scss";
 
 .navContainer {
   width: 100%;
   //max-width: 120vh;
-
-
   height: 10vh;
-
   display: grid;
   grid-template-columns: auto 1fr;
+  //grid-template-columns: auto 3fr;
   grid-template-rows: 100%;
   align-items: center;
 
@@ -17,13 +16,22 @@
   }
 }
 
+.nav:active {
+  font-weight: bold;
+}
+
 .nav {
   justify-self: end;
+  display: grid;
+  //grid-template-columns: repeat(2, auto);
+  grid-template-columns: 2fr 1fr;
+  column-gap: 10px;
+  justify-items: end;
 
   @media only screen and (min-width: $screen-medium) {
-    display: grid;
     grid-template-columns: repeat(3, auto);
     column-gap: 25px;
+    @include fontstyling.h3;
   }
 }
 
@@ -54,8 +62,21 @@
   }
 }
 
+.navTitle {
+
+  @include fontstyling.h2;
+
+  @media only screen and (min-width: $screen-medium) {
+    display: block;
+    font-size: 20px;
+    @include fontstyling.h1;
+  }
+
+}
+
 .navItem {
-  display: none;
+  //display: none;
+  //@include fontstyling.h4;
 
   @media only screen and (min-width: $screen-medium) {
     display: block;
@@ -67,14 +88,21 @@
 
 
 
-.popupMenu {
+.popup {
  // https://ibaslogic.com/how-to-add-hamburger-menu-in-react/
+  display: block;
+  border: 1px solid fuchsia;
+  height: 100%;
+  width: 100%;
 }
 
-.popupMenu show{
+.popup show{
+
+
+  border: 1px solid burlywood;
 
 }
 
-.popupMenu hidden{
-
+.popupMenu hide{
+  border: 1px solid green;
 }

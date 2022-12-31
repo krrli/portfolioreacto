@@ -3,7 +3,7 @@ import Head from "next/head";
 import styles from "./projects.module.scss";
 import React, {FunctionComponent, Fragment, ReactNode, useState} from 'react';
 import Jobs from "../components/Jobs/Jobs";
-import Navbar from "../components/Navbar/NavBar";
+import NavbarSelfmade from "../components/Navbar/NavbarSelfmade";
 import Footer from "../components/Footer/Footer";
 import {GetStaticProps, NextPage} from "next";
 import {ICvIntroFields, IJobFields, IProjectFields} from "../@types/contentful";
@@ -54,7 +54,7 @@ const Projects: NextPage<Props> = ({projects}) => {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Navbar></Navbar>
+            <NavbarSelfmade></NavbarSelfmade>
             <div>
                 {/*
                 <button onClick={onOpenModal}>Open modal</button>
