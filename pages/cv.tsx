@@ -17,9 +17,8 @@ const CV: NextPage<Props> = ({jobs, intro}) => {
 
     return (
         <>
-            <div>
                 <Navbar></Navbar>
-                <div className={styles.container}>
+                <div key={'cv-container'} className={styles.container}>
                     <div className={styles.introduction}>
                         {intro.map((intro) => (
                             <div>
@@ -29,10 +28,10 @@ const CV: NextPage<Props> = ({jobs, intro}) => {
                     </div>
 
 
-                    <div className={styles.timelineContainer}>
+                    <div key={'cv-jobs'} className={styles.timelineContainer}>
                         {jobs.map((job) => (
-                            <div className={styles.jobCardContainer}>
-                                <div key={job.title} className={styles.jobCard}>
+                            <div key={job.title} className={styles.jobCardContainer}>
+                                <div key={job.title +'1'} className={styles.jobCard}>
                                     <p><strong>{job.title}</strong>, {job.percentageText}</p>
                                     <p>{job.company} | {job.dateFrom} - {job.dateTo}</p>
                                     {documentToReactComponents(job.description)}
@@ -44,7 +43,6 @@ const CV: NextPage<Props> = ({jobs, intro}) => {
                     </div>
                 </div>
                 <Footer/>
-            </div>
         </>
     );
 };

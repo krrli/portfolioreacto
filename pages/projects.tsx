@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Head from "next/head";
 import styles from "./projects.module.scss";
-import React, {FunctionComponent, Fragment, ReactNode} from 'react';
+import React, {FunctionComponent, Fragment, ReactNode, useState} from 'react';
 import Jobs from "../components/Jobs/Jobs";
 import Navbar from "../components/Navbar/NavBar";
 import Footer from "../components/Footer/Footer";
@@ -11,6 +11,11 @@ import ContentService from "../util/content-service";
 import {documentToReactComponents} from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
 import Masonry from 'react-masonry-css'
+import {text} from "stream/consumers";
+import useModal from "../hooks/useModal";
+import Modal from "../components/Modal/Modal";
+
+
 
 
 
@@ -20,12 +25,21 @@ interface Props {
 
 const Projects: NextPage<Props> = ({projects}) => {
 //export default function Projects() {
+    const [dialogVisible, setDialogVisible] = useState<boolean>(false);
     const breakpointColumnsObj = {
         default: 3,
         1100: 3,
         760: 2,
         500: 1
     };
+    const { isOpen, toggle } = useModal();
+
+
+    const handleClick = () => {
+        console.log('dialog is visible', dialogVisible);
+        setDialogVisible(!dialogVisible);
+    };
+
     const openDetail = (project: IProjectFields) => {
         console.log('open modal with project ', project.title);
     };
@@ -47,7 +61,7 @@ const Projects: NextPage<Props> = ({projects}) => {
 
 
                         <div key={project.title} className={styles.projectCard}>
-                            <button className={styles.hiddenButton} onClick={() => openDetail(project)}>
+                            <button className={styles.hiddenButton} onClick={toggle}>
                                 <div className={styles.imageContainer}>
                                 {project.logo &&
                                 <Image
@@ -63,13 +77,18 @@ const Projects: NextPage<Props> = ({projects}) => {
 
                                 </div>
                             </button>
+                            {/*
+                            <button onClick={toggle}>Open Modal </button>
+                            <Modal isOpen={isOpen} toggle={toggle}>
+                            </Modal>
+                            */}
                         </div>
 
 
 
                     )}
-
                 </Masonry>
+
                 {/*
 
                 {projects.map((project) => (
@@ -94,8 +113,6 @@ const Projects: NextPage<Props> = ({projects}) => {
                             {documentToReactComponents(project.description)}
                         </div>
                     </div>
-
-
                 ))}
                 */}
             </div>

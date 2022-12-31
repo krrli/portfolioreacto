@@ -1,7 +1,7 @@
 .container {
   max-width: 90vh;
   width: auto;
-  display: grid;
+  //display: grid;
 }
 
 .masonryGrid{
@@ -24,6 +24,7 @@
 
 .hiddenButton {
   all:unset;
+  cursor: pointer;
 }
 
 .jobCardContainer {
