@@ -27,7 +27,6 @@ const Hello: FC<Props> = (props) => {
         generalInfo
     } = props;
 
-    console.log(generalInfo)
 
 //export default function Hello ({props}){
 
