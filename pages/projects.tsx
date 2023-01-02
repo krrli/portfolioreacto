@@ -31,7 +31,7 @@ const Projects: NextPage<Props> = ({projects}) => {
 
     const breakpointColumnsObj = {
         default: 3,
-        1100: 3,
+        900: 3,
         760: 2,
         500: 1
     };

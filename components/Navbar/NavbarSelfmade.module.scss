@@ -2,20 +2,30 @@
 @import "styles/variables.scss";
 
 .navContainer {
-  width: 100%;
+  align-items: baseline;
 
-  //max-width: 120vh;
   height: 10vh;
   display: grid;
   grid-template-columns: auto 1fr;
-  //grid-template-columns: auto 3fr;
   grid-template-rows: 100%;
-  align-items: center;
 
   @media only screen and (min-width: $screen-medium) {
     grid-template-columns: auto 3fr;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  @media only screen and (min-width: $screen-big) {
+    grid-template-columns: auto 3fr;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+
+  a{
+    text-decoration: none;
   }
 }
+
 
 
 
@@ -32,6 +42,8 @@
     column-gap: 25px;
     @include fontstyling.h3;
   }
+
+
 }
 
 .title {
