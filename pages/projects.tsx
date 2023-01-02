@@ -96,7 +96,9 @@ const Projects: NextPage<Props> = ({projects}) => {
                                 <div className={styles.projectTextContainer}>
                                     <div className={styles.projectTitle}>{project.title}</div>
                                     <div className={styles.projectCompany}>{project.company}</div>
-                                    { project.description && <div className={styles.projectDescriptionShort}>{project.descriptionShort}</div>}
+                                    { project.descriptionShort && (
+                                        <div className={styles.projectDescriptionShort}>{project.descriptionShort}</div>
+                                    )}
 
                                 </div>
                                 {project.projectTags &&
