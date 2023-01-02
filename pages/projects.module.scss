@@ -58,7 +58,7 @@
 }
 
 .projectTextContainer >div:not(:last-child){
-  //padding-bottom: 1vh;
+  padding-bottom: 1vh;
 }
 .projectTextContainer{
   font-size: 1.3vh;
@@ -84,3 +84,55 @@
   //padding-top: 1vh;
   padding-top: 0.5vh;
 }
+
+.projectTagsContainer{
+  width: 100%;
+  height: auto;
+
+}
+
+.projectTagsContainer > span{
+  padding-rihgt: 3px;
+}
+
+.projectTag {
+  align-items: center;
+
+  //font-weight: bold;
+  font-size: 1.2vh;
+  display: inline-block;
+  height: 100%;
+  white-space: nowrap;
+  width: auto;
+
+  position: relative;
+  border-radius: 100px;
+  line-height: 1;
+  overflow: hidden;
+  padding: 3px 6px 3px 6px;
+  //margin-right: 6px;
+  margin-right: 0.5vh;
+  margin-bottom: 0.5vh;
+  text-overflow: ellipsis;
+  //line-height: 1.25rem;
+  //color: #595959;
+  color: #6c757d;
+  word-break: break-word;
+
+  &:before {
+    border-radius: 50%;
+    content: '';
+    height: 10px;
+    left: 6px;
+    margin-top: -5px;
+    position: absolute;
+    top: 50%;
+    width: 10px;
+  }
+
+  background: lavender;
+
+}
+
+
+

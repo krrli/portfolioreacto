@@ -46,6 +46,10 @@ const Projects: NextPage<Props> = ({projects}) => {
         console.log('open modal with project ', project.title);
     };
 
+    const splitTags = (tags: string) => {
+
+    }
+
     return(
         <>
             <Head>
@@ -95,6 +99,17 @@ const Projects: NextPage<Props> = ({projects}) => {
                                     { project.description && <div className={styles.projectDescriptionShort}>{project.descriptionShort}</div>}
 
                                 </div>
+                                {project.projectTags &&
+                                    <div className={styles.projectTagsContainer}>
+
+                                    {project.projectTags.split(/[,]+/).map((prj) =>
+                                            <span className={styles.projectTag}>
+                                                {prj}
+                                            </span>
+                                        )}
+                                    </div>
+                                }
+
                             </button>
                         </div>
                     )}

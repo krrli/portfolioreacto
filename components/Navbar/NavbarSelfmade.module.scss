@@ -77,9 +77,11 @@
   //display: none;
   //@include fontstyling.h4;
 
+
   @media only screen and (min-width: $screen-medium) {
     display: block;
     font-size: 20px;
+
   }
 
 }

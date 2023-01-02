@@ -168,7 +168,13 @@ export interface IProjectFields {
   descriptionShort?: string | undefined;
 
   /** Project Links */
-  projectLinks?: Entry<{ [fieldId: string]: unknown }>[] | undefined;
+  projectLinks?: Entry<ILinksFields>[] | undefined;
+
+  /** Project Tags */
+  projectTags?: string | undefined;
+
+  /** project LinksRT */
+  projectLinksRt?: Document | undefined;
 }
 
 export interface IProject extends Entry<IProjectFields> {
