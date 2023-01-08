@@ -32,7 +32,6 @@
 .nav {
   justify-self: end;
   display: grid;
-  //grid-template-columns: repeat(2, auto);
   grid-template-columns: 2fr 1fr;
   column-gap: 10px;
   justify-items: end;

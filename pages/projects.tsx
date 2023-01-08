@@ -1,18 +1,15 @@
-import Link from "next/link";
 import Head from "next/head";
 import styles from "./projects.module.scss";
-import React, {FunctionComponent, Fragment, ReactNode, useState} from 'react';
-import Jobs from "../components/Jobs/Jobs";
+import React, {useState} from 'react';
 import NavbarSelfmade from "../components/Navbar/NavbarSelfmade";
 import Footer from "../components/Footer/Footer";
 import {GetStaticProps, NextPage} from "next";
-import {ICvIntroFields, IJobFields, IProjectFields} from "../@types/contentful";
+import {IProjectFields} from "../@types/contentful";
 import ContentService from "../util/content-service";
-import {documentToReactComponents} from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
 import Masonry from 'react-masonry-css'
 import 'react-responsive-modal/styles.css';
-import { Modal } from 'react-responsive-modal';
+import {Modal} from 'react-responsive-modal';
 import ProjectDetail from "../components/ProjectDetail/ProjectDetail";
 
 
@@ -50,29 +47,15 @@ const Projects: NextPage<Props> = ({projects}) => {
 
     }
 
-    return(
+    return (
         <>
             <Head>
                 <title>it's carla | Projekte</title>
-                <meta name="description" content="Projekte der Carla" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/favicon.ico" />
+                <meta name="description" content="Projekte der Carla"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <link rel="icon" href="/favicon.ico"/>
             </Head>
             <NavbarSelfmade></NavbarSelfmade>
-            <div>
-                {/*
-                <button onClick={onOpenModal}>Open modal</button>
-
-                <Modal open={open} onClose={onCloseModal} center>
-                    <h2>Simple centered modal</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                        pulvinar risus non risus hendrerit venenatis. Pellentesque sit amet
-                        hendrerit risus, sed porttitor quam.
-                    </p>
-                </Modal>
-                */}
-            </div>
             <div className={styles.container}>
                 <Masonry className={styles.masonryGrid}
                          breakpointCols={breakpointColumnsObj}
@@ -84,19 +67,22 @@ const Projects: NextPage<Props> = ({projects}) => {
                             {/*
                             <button className={styles.hiddenButton} onClick={(detail) => openDetail}>
                             */}
-                            <button className={styles.hiddenButton} onClick={() => {onOpenModal(); setModalData(project);}}>
+                            <button className={styles.hiddenButton} onClick={() => {
+                                onOpenModal();
+                                setModalData(project);
+                            }}>
                                 <div className={styles.imageContainer}>
-                                {project.logo &&
-                                <Image
-                                    src={'https:'+ project.logo.fields.file.url}
-                                    width={project.logo.fields.file.details.image?.width}
-                                    height={project.logo.fields.file.details.image?.height}
-                                    alt={project.logo.fields.title}></Image>}
+                                    {project.logo &&
+                                        <Image
+                                            src={'https:' + project.logo.fields.file.url}
+                                            width={project.logo.fields.file.details.image?.width}
+                                            height={project.logo.fields.file.details.image?.height}
+                                            alt={project.logo.fields.title}></Image>}
                                 </div>
                                 <div className={styles.projectTextContainer}>
                                     <div className={styles.projectTitle}>{project.title}</div>
                                     <div className={styles.projectCompany}>{project.company}</div>
-                                    { project.descriptionShort && (
+                                    {project.descriptionShort && (
                                         <div className={styles.projectDescriptionShort}>{project.descriptionShort}</div>
                                     )}
 
@@ -104,7 +90,7 @@ const Projects: NextPage<Props> = ({projects}) => {
                                 {project.projectTags &&
                                     <div className={styles.projectTagsContainer}>
 
-                                    {project.projectTags.split(/[,]+/).map((prj) =>
+                                        {project.projectTags.split(/[,]+/).map((prj) =>
                                             <span className={styles.projectTag}>
                                                 {prj}
                                             </span>
@@ -120,33 +106,6 @@ const Projects: NextPage<Props> = ({projects}) => {
                 <Modal key={Math.random()} open={open} onClose={onCloseModal} center>
                     <ProjectDetail project={modalData}></ProjectDetail>
                 </Modal>
-
-                {/*
-
-                {projects.map((project) => (
-                    <div className={styles.jobCardContainer}>
-                        <div key={project.title} className={styles.projectCard}>
-                            {project.logo &&
-                                <Image
-                                    src={'https:'+ project.logo.fields.file.url}
-                                    width={project.logo.fields.file.details.image?.width}
-                                    height={project.logo.fields.file.details.image?.height}
-                                    alt={project.logo.fields.title}></Image>}
-                            <p>{project.title}</p>
-                            <p>{project.company}</p>
-                            <p>{project.yearFrom} - {project.yearEnd}</p>
-                            {project.descriptionShort &&
-                                <p>{project.descriptionShort}</p>
-                            }
-                            <p>todo: urls</p>
-                            <p>todo: buzzwords</p>
-
-                            <p>todo: move to popup</p>
-                            {documentToReactComponents(project.description)}
-                        </div>
-                    </div>
-                ))}
-                */}
             </div>
             <Footer/>
         </>

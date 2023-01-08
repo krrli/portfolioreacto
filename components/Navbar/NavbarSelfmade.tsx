@@ -1,10 +1,7 @@
 
 import React, { useState } from 'react';
 import styles from './NavbarSelfmade.module.scss';
-import {NavLink} from "react-router-dom";
 import Link from "next/link";
-import { FiMenu } from "react-icons/fi";
-import { CgClose } from "react-icons/cg";
 
 
 

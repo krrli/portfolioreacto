@@ -1,10 +1,9 @@
 import React from 'react';
-import {ICvIntroFields, IJobFields, ILinksFields, IProjectFields} from "../../@types/contentful";
+import {IProjectFields} from "../../@types/contentful";
 import styles from "./ProjectDetail.module.scss"
 import Image from "next/image";
 import {documentToReactComponents} from "@contentful/rich-text-react-renderer";
-import {BLOCKS, Document, INLINES, MARKS} from '@contentful/rich-text-types';
-import {options} from "tsconfig-paths/lib/options";
+import {Document, INLINES} from '@contentful/rich-text-types';
 
 interface Props {
     project: IProjectFields;
@@ -20,14 +19,14 @@ const ProjectDetail = (props: Props, document: Document) => {
     const renderOptions = {
         renderText: (text: string) => {
             return text.split('\n').reduce((children: any, textSegment: any, index: React.Key | null | undefined) => {
-                return [...children, index! > 0 && <br key={index} />, textSegment];
+                return [...children, index! > 0 && <br key={index}/>, textSegment];
             }, []);
         }
     };
 
     const options = {
         renderNode: {
-            [INLINES. HYPERLINK]: (node: { data: { uri: string; }; content: any; }, next: (arg0: any) => any) => {
+            [INLINES.HYPERLINK]: (node: { data: { uri: string; }; content: any; }, next: (arg0: any) => any) => {
                 return `<a href="${node.data.uri}"${node.data.uri.startsWith('https://mydomain.com') ? '' : ' target="_blank"'}>${next(node.content)}</a>`;
             }
         }
@@ -36,13 +35,13 @@ const ProjectDetail = (props: Props, document: Document) => {
     return (
         <div className={styles.container}>
             {project.logo &&
-            <div className={styles.imageContainer}>
-                <Image
-                src={'https:'+ project.logo.fields.file.url}
-                width={project.logo.fields.file.details.image?.width}
-                height={project.logo.fields.file.details.image?.height}
-                alt={project.logo.fields.title}></Image>
-            </div>}
+                <div className={styles.imageContainer}>
+                    <Image
+                        src={'https:' + project.logo.fields.file.url}
+                        width={project.logo.fields.file.details.image?.width}
+                        height={project.logo.fields.file.details.image?.height}
+                        alt={project.logo.fields.title}></Image>
+                </div>}
             <div className={styles.textContainer}>
                 <div className={styles.projectTitle}>{project.title}</div>
                 <div className={styles.projectCompany}>{project.company}</div>
